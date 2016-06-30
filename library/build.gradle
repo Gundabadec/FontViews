@@ -1,6 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 
+group = 'com.github.gundabadec'
+version = '0.0.1'
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
@@ -8,7 +11,7 @@ android {
         minSdkVersion 10
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -28,30 +31,46 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-bintray {
-    user = System.getenv('BINTRAY_USER')
-    key = System.getenv('BINTRAY_KEY')
-    pkg {
-        repo = 'maven'
-        name = 'Gundabadec'
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/bintray/gradle-bintray-plugin.git'
-    }
-}
-
 Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+properties.load(project.rootProject.file('gradle.properties').newDataInputStream())
+
+def gitUrl = "https://github.com/Gundabadec/FontViews.git"
+def siteUrl = "https://github.com/Gundabadec/FontViews"
 
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    user = properties.getProperty("bintrayUser")
+    key = properties.getProperty("bintrayKey")
 
     configurations = ['archives']
     pkg {
         repo = "maven"
         name = "fonttextviews"
-        vcsUrl = ""
+        vcsUrl = gitUrl
+        websiteUrl = siteUrl
         licenses = ["Apache-2.0"]
         publish = true
     }
+}
+
+//publish {
+//    groupId = 'com.github.gundabadec'
+//    artifactId = 'fonttextviews'
+//    publishVersion = '0.0.1'
+//    desc = 'A library containing a views with the ability to install a custom font'
+//    licences = ['MIT']
+//    website = 'https://github.com/gundabadec/FontViews'
+//}
+
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+task findConventions << {
+    println project.getConvention()
 }
