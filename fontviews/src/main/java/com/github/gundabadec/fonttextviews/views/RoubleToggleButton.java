@@ -1,4 +1,4 @@
-package com.github.gundabadec.fonttextviews;
+package com.github.gundabadec.fonttextviews.views;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.widget.CheckBox;
+import android.widget.ToggleButton;
 
 import com.github.gundabadec.fonttextviews.FontFabric;
 import com.github.gundabadec.fonttextviews.TypefaceSpan2;
@@ -14,21 +14,21 @@ import com.github.gundabadec.fonttextviews.TypefaceSpan2;
 /**
  * Created by magomed on 07/06/16.
  */
-public class RoubleCheckBox extends CheckBox {
-    public RoubleCheckBox(Context context) {
+public class RoubleToggleButton extends ToggleButton {
+    public RoubleToggleButton(Context context) {
         super(context);
     }
 
-    public RoubleCheckBox(Context context, AttributeSet attrs) {
+    public RoubleToggleButton(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public RoubleCheckBox(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RoubleToggleButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public RoubleCheckBox(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public RoubleToggleButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 

@@ -1,4 +1,4 @@
-package com.github.gundabadec.fonttextviews;
+package com.github.gundabadec.fonttextviews.views;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -8,32 +8,32 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-import com.github.gundabadec.fonttextviews.R;
 import com.github.gundabadec.fonttextviews.FontFabric;
+import com.github.gundabadec.fonttextviews.R;
 
 /**
  * Created by magomed on 26/05/16.
  */
-public class FontCheckedTextView extends RoubleCheckedTextView {
+public class FontButton extends RoubleButton {
     private String fontPath;
 
-    public FontCheckedTextView(Context context) {
+    public FontButton(Context context) {
         super(context);
         init(context, null);
     }
 
-    public FontCheckedTextView(Context context, AttributeSet attrs) {
+    public FontButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public FontCheckedTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FontButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public FontCheckedTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public FontButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
