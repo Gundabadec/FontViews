@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class FontFabric {
     final public static String FONT_ROUBLE_NAME = "rouble2.ttf";
 
-    public static final HashMap<String, Typeface> sTypefaceCache = new HashMap<>();
+    private static final HashMap<String, Typeface> sTypefaceCache = new HashMap<>();
 
     public static Typeface getTypeface(AssetManager assetManager,String path) {
         if (!sTypefaceCache.containsKey(path)) {

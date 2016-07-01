@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.CheckedTextView;
 
-import ru.appsfactory.fonttextview.Font;
 import ru.appsfactory.fonttextview.FontFabric;
 import ru.appsfactory.fonttextview.TypefaceSpan2;
 

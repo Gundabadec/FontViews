@@ -1,22 +1,40 @@
 package ru.appsfactory.fonttextview.views;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
+import android.os.Build;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 
 import ru.appsfactory.font.fonttextviews.R;
-import ru.appsfactory.fonttextview.Font;
 import ru.appsfactory.fonttextview.FontFabric;
 
 /**
  * Created by magomed on 26/05/16.
  */
 public class FontCheckedTextView extends RoubleCheckedTextView {
-    private Font font;
+    private String fontPath;
+
+    public FontCheckedTextView(Context context) {
+        super(context);
+        init(context, null);
+    }
 
     public FontCheckedTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context, attrs);
+    }
+
+    public FontCheckedTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public FontCheckedTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
 
@@ -26,12 +44,6 @@ public class FontCheckedTextView extends RoubleCheckedTextView {
         setTypeFace();
     }
 
-
-    public FontCheckedTextView(Context context) {
-        super(context);
-        attachParams(context, null);
-    }
-
     private void attachParams(Context context, AttributeSet attrs) {
         if (attrs == null)
             return;
@@ -39,23 +51,20 @@ public class FontCheckedTextView extends RoubleCheckedTextView {
                 attrs,
                 R.styleable.TextView,
                 0, 0);
-
         try {
-            int fontIndex = a.getInteger(R.styleable.TextView_font, -1);
-            if (fontIndex != -1)
-                font = Font.valueOf(fontIndex);
+            this.fontPath = a.getString(R.styleable.TextView_font);
         } finally {
             a.recycle();
         }
     }
 
     private void setTypeFace() {
-        if (font != null)
-            setTypeface(FontFabric.getTypeface(getContext().getAssets(), font.getName()));
+        if (!TextUtils.isEmpty(fontPath) && !isInEditMode())
+            setTypeface(FontFabric.getTypeface(getContext().getAssets(), fontPath));
     }
 
-    public void setFont(Font font) {
-        this.font = font;
+    public void setFont(String fontPath) {
+        this.fontPath = fontPath;
         setTypeFace();
     }
 }

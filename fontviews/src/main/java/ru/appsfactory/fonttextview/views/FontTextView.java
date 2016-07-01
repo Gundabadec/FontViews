@@ -5,36 +5,36 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 
 import ru.appsfactory.font.fonttextviews.R;
-import ru.appsfactory.fonttextview.Font;
 import ru.appsfactory.fonttextview.FontFabric;
 
 /**
  * Created by magomed on 26/05/16.
  */
-public class FontEditText extends RoubleEditText {
-    private Font font;
+public class FontTextView extends RoubleTextView {
+    private String fontPath;
 
-    public FontEditText(Context context) {
+    public FontTextView(Context context) {
         super(context);
         init(context, null);
     }
 
-    public FontEditText(Context context, AttributeSet attrs) {
+    public FontTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public FontEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+    public FontTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
-    public FontEditText(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public FontTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
 
@@ -44,11 +44,6 @@ public class FontEditText extends RoubleEditText {
         setTypeFace();
     }
 
-    private void setTypeFace() {
-        if (font != null)
-            setTypeface(FontFabric.getTypeface(getContext().getAssets(), font.getName()));
-    }
-
     private void attachParams(Context context, AttributeSet attrs) {
         if (attrs == null)
             return;
@@ -56,18 +51,20 @@ public class FontEditText extends RoubleEditText {
                 attrs,
                 R.styleable.TextView,
                 0, 0);
-
         try {
-            int fontIndex = a.getInteger(R.styleable.TextView_font, -1);
-            if (fontIndex != -1)
-                font = Font.valueOf(fontIndex);
+            this.fontPath = a.getString(R.styleable.TextView_font);
         } finally {
             a.recycle();
         }
     }
 
-    public void setFont(Font font) {
-        this.font = font;
+    private void setTypeFace() {
+        if (!TextUtils.isEmpty(fontPath) && !isInEditMode())
+            setTypeface(FontFabric.getTypeface(getContext().getAssets(), fontPath));
+    }
+
+    public void setFont(String fontPath) {
+        this.fontPath = fontPath;
         setTypeFace();
     }
 }

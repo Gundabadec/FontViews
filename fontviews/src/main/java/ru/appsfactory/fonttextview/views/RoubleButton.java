@@ -6,30 +6,29 @@ import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.widget.CheckBox;
+import android.widget.Button;
 
-import ru.appsfactory.fonttextview.Font;
 import ru.appsfactory.fonttextview.FontFabric;
 import ru.appsfactory.fonttextview.TypefaceSpan2;
 
 /**
  * Created by magomed on 07/06/16.
  */
-public class RoubleCheckBox extends CheckBox {
-    public RoubleCheckBox(Context context) {
+public class RoubleButton extends Button {
+    public RoubleButton(Context context) {
         super(context);
     }
 
-    public RoubleCheckBox(Context context, AttributeSet attrs) {
+    public RoubleButton(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public RoubleCheckBox(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RoubleButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public RoubleCheckBox(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public RoubleButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 

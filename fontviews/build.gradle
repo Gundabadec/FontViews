@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
 group = 'com.github.gundabadec'
 version = '0.0.1'
@@ -34,8 +35,8 @@ dependencies {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('gradle.properties').newDataInputStream())
 
-def gitUrl = "https://github.com/Gundabadec/FontViews.git"
-def siteUrl = "https://github.com/Gundabadec/FontViews"
+def gitUrl = "https://github.com/gundabadec/FontViews.git"
+def siteUrl = "https://github.com/gundabadec/FontViews"
 
 bintray {
     user = properties.getProperty("bintrayUser")
@@ -52,23 +53,20 @@ bintray {
     }
 }
 
-//publish {
-//    groupId = 'com.github.gundabadec'
-//    artifactId = 'fonttextviews'
-//    publishVersion = '0.0.1'
-//    desc = 'A library containing a views with the ability to install a custom font'
-//    licences = ['MIT']
-//    website = 'https://github.com/gundabadec/FontViews'
-//}
-
-
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
 
-artifacts {
-    archives sourcesJar
+publishing {
+    publications {
+        Publication(MavenPublication) {
+            artifact sourcesJar
+            groupId 'com.github.gundabadec'
+            artifactId 'fonttextviews'
+            version '0.0.1'
+        }
+    }
 }
 
 task findConventions << {
