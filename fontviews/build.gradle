@@ -33,7 +33,7 @@ dependencies {
 }
 
 Properties properties = new Properties()
-properties.load(project.rootProject.file('gradle.properties').newDataInputStream())
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 def gitUrl = "https://github.com/gundabadec/FontViews.git"
 def siteUrl = "https://github.com/gundabadec/FontViews"
