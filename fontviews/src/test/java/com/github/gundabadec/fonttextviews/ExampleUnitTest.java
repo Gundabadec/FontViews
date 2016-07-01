@@ -1,4 +1,4 @@
-package ru.appsfactory.font.fonttextviews;
+package com.github.gundabadec.fonttextviews;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package ru.appsfactory.fonttextview.views;
+package com.github.gundabadec.fonttextviews;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -8,32 +8,32 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-import ru.appsfactory.fontPath.fonttextviews.R;
-import ru.appsfactory.fonttextview.FontFabric;
+import com.github.gundabadec.fonttextviews.R;
+import com.github.gundabadec.fonttextviews.FontFabric;
 
 /**
  * Created by magomed on 26/05/16.
  */
-public class FontToggleButton extends RoubleToggleButton {
+public class FontTextView extends RoubleTextView {
     private String fontPath;
 
-    public FontToggleButton(Context context) {
+    public FontTextView(Context context) {
         super(context);
         init(context, null);
     }
 
-    public FontToggleButton(Context context, AttributeSet attrs) {
+    public FontTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public FontToggleButton(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FontTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public FontToggleButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public FontTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }

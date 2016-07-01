@@ -1,4 +1,4 @@
-package ru.appsfactory.fonttextview.views;
+package com.github.gundabadec.fonttextviews;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -6,30 +6,29 @@ import android.os.Build;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.widget.TextView;
+import android.widget.CheckBox;
 
-import ru.appsfactory.fonttextview.FontFabric;
-import ru.appsfactory.fonttextview.TypefaceSpan2;
+import com.github.gundabadec.fonttextviews.FontFabric;
+import com.github.gundabadec.fonttextviews.TypefaceSpan2;
 
 /**
  * Created by magomed on 07/06/16.
  */
-public class RoubleTextView extends TextView {
-
-    public RoubleTextView(Context context) {
+public class RoubleCheckBox extends CheckBox {
+    public RoubleCheckBox(Context context) {
         super(context);
     }
 
-    public RoubleTextView(Context context, AttributeSet attrs) {
+    public RoubleCheckBox(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public RoubleTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RoubleCheckBox(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public RoubleTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public RoubleCheckBox(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 

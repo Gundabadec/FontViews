@@ -1,4 +1,4 @@
-package ru.appsfactory.fonttextview;
+package com.github.gundabadec.fonttextviews;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;

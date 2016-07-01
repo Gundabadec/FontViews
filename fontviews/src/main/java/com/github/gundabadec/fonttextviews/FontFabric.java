@@ -1,6 +1,5 @@
-package ru.appsfactory.fonttextview;
+package com.github.gundabadec.fonttextviews;
 
-import android.app.Application;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 
