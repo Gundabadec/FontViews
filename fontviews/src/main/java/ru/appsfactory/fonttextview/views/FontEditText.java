@@ -8,7 +8,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-import ru.appsfactory.font.fonttextviews.R;
+import ru.appsfactory.fontPath.fonttextviews.R;
 import ru.appsfactory.fonttextview.FontFabric;
 
 /**
@@ -52,7 +52,7 @@ public class FontEditText extends RoubleEditText {
                 R.styleable.TextView,
                 0, 0);
         try {
-            this.fontPath = a.getString(R.styleable.TextView_font);
+            this.fontPath = a.getString(R.styleable.TextView_fontPath);
         } finally {
             a.recycle();
         }
