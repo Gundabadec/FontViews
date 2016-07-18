@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
 group = 'com.github.gundabadec'
-version = '0.0.1'
+version = '0.0.2'
 
 android {
     compileSdkVersion 24
@@ -12,7 +12,7 @@ android {
         minSdkVersion 10
         targetSdkVersion 24
         versionCode 1
-        versionName "0.0.1"
+        versionName "0.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -64,7 +64,7 @@ publishing {
             artifact sourcesJar
             groupId 'com.github.gundabadec'
             artifactId 'fonttextviews'
-            version '0.0.1'
+            version '0.0.2'
         }
     }
 }
