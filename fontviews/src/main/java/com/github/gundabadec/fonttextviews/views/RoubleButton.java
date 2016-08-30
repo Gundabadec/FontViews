@@ -3,6 +3,7 @@ package com.github.gundabadec.fonttextviews.views;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
+import android.support.v7.widget.AppCompatButton;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -14,7 +15,7 @@ import com.github.gundabadec.fonttextviews.TypefaceSpan2;
 /**
  * Created by magomed on 07/06/16.
  */
-public class RoubleButton extends Button {
+public class RoubleButton extends AppCompatButton {
     public RoubleButton(Context context) {
         super(context);
     }
@@ -25,11 +26,6 @@ public class RoubleButton extends Button {
 
     public RoubleButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public RoubleButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
     }
 
     @Override

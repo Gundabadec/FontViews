@@ -16,7 +16,6 @@ import com.github.gundabadec.fonttextviews.R;
  */
 public class FontButton extends RoubleButton {
     private String fontPath;
-
     public FontButton(Context context) {
         super(context);
         init(context, null);
@@ -29,12 +28,6 @@ public class FontButton extends RoubleButton {
 
     public FontButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs);
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public FontButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
 

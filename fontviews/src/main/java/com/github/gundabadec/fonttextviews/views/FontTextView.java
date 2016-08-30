@@ -32,12 +32,6 @@ public class FontTextView extends RoubleTextView {
         init(context, attrs);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public FontTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(context, attrs);
-    }
-
     private void init(Context context, AttributeSet attrs) {
         setPaintFlags(getPaintFlags() | Paint.SUBPIXEL_TEXT_FLAG);
         attachParams(context, attrs);
